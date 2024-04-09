@@ -36,16 +36,16 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+/* turn off for dev - should be uncommented when running tests against all browsers */
+// {
+//     name: 'firefox',
+//      use: { ...devices['Desktop Firefox'] },
+//    },
+//
+//    {
+//      name: 'webkit',
+//      use: { ...devices['Desktop Safari'] },
+//    },
 
     /* Test against mobile viewports. */
     // {

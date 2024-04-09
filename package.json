@@ -1,0 +1,22 @@
+{
+  "name": "pwautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chilimaker/PWAutomation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chilimaker/PWAutomation/issues"
+  },
+  "homepage": "https://github.com/chilimaker/PWAutomation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.6"
+  }
+}

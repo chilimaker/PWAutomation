@@ -6,9 +6,10 @@ export class LoginPage {
   readonly username: Locator;
   readonly password: Locator;
   readonly loginButton: Locator;
-  readonly validusername: string = 'standard_user';
-  readonly validpassword: string = 'secret_sauce';
-
+  //readonly validusername: string = 'standard_user';
+  //readonly validpassword: string = 'secret_sauce';
+   validusername = process.env.VALID_USERNAME as string;
+   validpassword = process.env.VALID_PASSWORD as string;
 
   public constructor(page: Page){
     this.page = page;
@@ -22,6 +23,8 @@ export class LoginPage {
 
   async visit(){
     await this.page.goto(this.url);
+    //await this.username.fill(this.validusername);
+    //await this.password.fill(this.validpassword);
     await this.username.fill(this.validusername);
     await this.password.fill(this.validpassword);
     await this.loginButton.click();

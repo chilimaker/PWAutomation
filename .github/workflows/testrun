@@ -1,0 +1,34 @@
+name: trigger scripts on push
+
+on:
+  repository_dispatch:
+    types: ['testrun']
+    branches: [ "main" ]
+
+env:
+  REPO_NAME: PWAutomation
+  report_paths: '**/build/test-results/test/TEST-*.xml'
+  SQL_ENV: ${{ github.event.client_payload.SQL_ENV || 'default_value' }}
+  TEST_ENV: ${{ github.event.client_payload.TEST_ENV || 'default_value' }}
+  SENDING_REPO: ${{ github.event.client_payload.SENDING_REPO || 'default_value' }}
+  RUN_TESTS: ${{ github.event.client_payload.RUN_TESTS || 'default_value' }}
+  SOME_VALUE_KEY: ${{ secrets.REPO_AWS_ACCESS_KEY_ID }}
+  
+jobs:
+  build:
+    runs-on: [self-hosted, windows, x64]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3 
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '18' 
+          ref: ${{ github.event.client_payload.ref }}
+
+      - run: echo ${{ github.event.client_payload.sha }}        
+
+      - name: Print current time
+        run: echo "The current time is $(date)"
+
+      - name: Build and Run Tests
+        run:  ${{ env.RUN_TESTS }}

@@ -1,0 +1,91 @@
+#Workflow to test repository_dispatch  -- this should trigger qa-automation-p to run --
+
+name: ReleaseToBeta
+
+on:
+  push:
+    branches: [ main ]
+  repository_dispatch:
+   types: [response]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+   
+    steps: 
+     # checkout this repo
+      - name: Checkout Repo
+        if: github.event.action == ''
+        uses: actions/checkout@v2
+      - run: echo "Repo name ${{github.event.repository.name}}"     
+     
+     # get the run id
+      - name: Run id 
+        run: |   
+         echo ${{ env.GITHUB_RUN_ID }}
+         echo ${{ github.run_id }}
+                 
+      # checkout the private repo containing the action to run
+      - name: Checkout GitHub Action Repo
+        if: github.event.action == ''
+        uses: actions/checkout@v2
+        with:
+          repository: aspencapital/repository-dispatch
+          ref: v1.0.0
+          token: ${{ secrets.AUTOMATION_REMOTE_REPO }} # stored in GitHub secrets          
+          path: .github/actions/repository-dispatch
+          
+      # Send automation scripts to be run    
+      - name: Run Automation scripts remotely
+        if: github.event.action == ''
+        uses: ./.github/actions/repository-dispatch
+        with:    
+          token: ${{ secrets.Automation_Remote_Repo }}
+          targetrepository: aspencapital/qa_aspen_automation       
+          eventType: testrun1
+          payload: '{"SENDING_REPO":"${{github.event.repository.name}}","SQL_ENV": "qa1","TWILIO_ENV": "beta", "RUN_TESTS":"marsnet","ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "LOAN_PERCENT": "0.15", "LOAN_DATASET_OVERRIDE": "1" }'
+
+      # Pause for automation scripts to run    
+      - name: Pause for automation scripts to run
+        if: github.event.action == ''
+        run: |
+         sleep 120
+                 
+      - name: Pull automation results        
+        run: | 
+          response=$(curl 'https://api.github.com/repos/aspencapital/qa_aspen_automation/actions/runs?per_page=1' \
+           -H "Accept:application/vnd.github.v3+json" \
+           -H "Content-Type:application/json" \
+           -H "Authorization:token ${{ secrets.AUTOMATION_REMOTE_REPO }}" )   
+           
+            STATUS=$(jq -r ".workflow_runs[0] | .status" <<< $response)
+            echo "Check suite state: ${STATUS}"   
+            echo "teststatus=$STATUS" >> $GITHUB_ENV
+       
+      - name: Pause if Automation not complete
+        if: ${{ env.teststatus != 'completed' }}
+        run: |
+          echo "Automation not complete, currently : ${{ env.teststatus }} "
+          sleep 120     
+          
+     # check final test results
+      - name: check final test results     
+        run: |
+          finalresponse=$(curl 'https://api.github.com/repos/aspencapital/qa_aspen_automation/actions/runs?per_page=1' \
+           -H "Accept:application/vnd.github.v3+json" \
+           -H "Content-Type:application/json" \
+           -H "Authorization:token ${{ secrets.AUTOMATION_REMOTE_REPO }}" )   
+           
+            STATUS=$(jq -r ".workflow_runs[0] | .status" <<< $finalresponse)
+            echo "Check final suite status: ${STATUS}" 
+            
+            RESULT=$(jq -r ".workflow_runs[0] | .conclusion" <<< $finalresponse)
+            echo "Check suite result: ${RESULT}"                          
+            echo "testresult=$RESULT" >> $GITHUB_ENV
+             
+    #fail workflow if automation fails
+      - name: Fail workflow if automation fails
+        if: ${{  env.testresult == 'failure' }}
+        run: |
+         exit 1 

@@ -20,6 +20,10 @@
     "@types/node": "^20.12.6"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "@types/parse": "^3.0.9",
+    "csv": "^6.3.8",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "parse": "^5.0.0"
   }
 }

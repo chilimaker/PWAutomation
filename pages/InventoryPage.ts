@@ -35,7 +35,7 @@ export class InventoryPage {
 
     // Split returned string on $
     var myarr = myresult.toString().split('$');
-    //console.log(myarr);
+    //console.log(myarr[1]);
 
     // Split second string on line fee
     var myarr1 = myarr[1].toString().split('\n');

@@ -3,7 +3,9 @@ import { LoginPage } from "../pages/LoginPage";
 import { InventoryPage } from "../pages/InventoryPage";
 import { ShoppingCartPage } from "../pages/ShoppingCartPage";
 
-test("Login Test", async ({ page }) => {
+test("Login Test",  {
+  tag: '@login'
+ },  async ({ page }) => {
 
   const browser = await chromium.launch();
   const context = await browser.newContext();
@@ -18,12 +20,16 @@ test("Login Test", async ({ page }) => {
   // Verify page object is visible
   await expect(inventoryPage.productSort).toBeVisible()
 
+  
   await page.close();
-  browser.close() 
+  await context.close();
+  await browser.close();
   
 })
 
-test("Add Single Item to Cart", async ({ page }) => {
+test("Add Single Item to Cart",  {
+  tag: '@regression'
+ }, async ({ page }) => {
 
   const browser = await chromium.launch();
   const context = await browser.newContext();
@@ -52,7 +58,8 @@ test("Add Single Item to Cart", async ({ page }) => {
   await inventoryPage.check_remove_button('sauce-labs-backpack')
 
   await page.close();
-  browser.close() 
+  await context.close();
+  await browser.close();
 })
 
 //for (const record of records) {
@@ -84,7 +91,8 @@ test("Check Price of Item Added to Cart", {
   await expect(page.getByText(myPrice)).toBeVisible();
 
   await page.close();
-  browser.close() 
+  await context.close();
+  await browser.close();
 })
 
 

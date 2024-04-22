@@ -31,7 +31,7 @@ jobs:
         if: github.event.action == ''
         uses: actions/checkout@v2
         with:
-          repository: aspencapital/repository-dispatch
+          repository: repository-dispatch
           ref: v1.0.0
           token: ${{ secrets.AUTOMATION_REMOTE_REPO }} # stored in GitHub secrets          
           path: .github/actions/repository-dispatch

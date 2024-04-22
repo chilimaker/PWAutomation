@@ -2,6 +2,9 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv'
     dotenv.config();
 
+    module.exports = {
+      reporter:[ ['list'], [ 'json', {  outputFile: 'reports.json' }] ]
+  }
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -33,16 +36,16 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-/* turn off for dev - should be uncommented when running tests against all browsers */
-// {
-//     name: 'firefox',
-//      use: { ...devices['Desktop Firefox'] },
-//    },
-//
-//    {
-//      name: 'webkit',
-//      use: { ...devices['Desktop Safari'] },
-//    },
+    
+    {
+     name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
 
     /* Test against mobile viewports. */
     // {
@@ -55,16 +58,17 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+     {
+       name: 'Microsoft Edge',
+       use: { ...devices['Desktop Edge'], channel: 'msedge' },
+     },
+     {
+       name: 'Google Chrome',
+       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+     },
   ],
 
+  
   /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',

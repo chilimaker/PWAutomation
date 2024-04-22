@@ -7,16 +7,12 @@ export class InventoryPage {
   readonly productSort: Locator;
   readonly shoppingCart: Locator;
 
-
-
   
   public constructor(page: Page){
     this.page = page;   
     this.openMenuButton = page.getByRole('button', {name: 'Open Menu'})
     this.productSort = page.locator('[data-test="product-sort-container"]')
     this.shoppingCart = page.locator('[data-test="shopping-cart-link"]')
-
-
   }
 
   async add_item_to_cart(item_name: string){      

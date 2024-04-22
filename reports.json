@@ -1,0 +1,244 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Greg.Woffindin\\source\\repos\\PWAutomation\\playwright.config.ts",
+    "rootDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 0
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.43.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests\\Data.test.ts",
+      "file": "tests/Data.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Check Number of Items Added to Cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 9859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Check item Count ",
+                      "duration": 22
+                    },
+                    {
+                      "title": "Check Cart Subtotal",
+                      "duration": 12
+                    }
+                  ],
+                  "startTime": "2024-04-22T15:11:30.197Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2991f28cc458fad6a64-9d5a8dd540c688ef4a72",
+          "file": "tests/Data.test.ts",
+          "line": 16,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "tests\\Login.test.ts",
+      "file": "tests/Login.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Login Test",
+          "ok": false,
+          "tags": [
+            "login"
+          ],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 21622,
+                  "error": {
+                    "message": "Error: Target crashed ",
+                    "stack": "Error: Target crashed "
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: Target crashed "
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-22T15:11:40.576Z",
+                  "attachments": []
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "dcb31983a82c67060828-d50b3d72627a6a35c7e4",
+          "file": "tests/Login.test.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "Add Single Item to Cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 1348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-22T15:12:03.264Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcb31983a82c67060828-0d1db39ddf932d31ea8a",
+          "file": "tests/Login.test.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "Check Price of Item Added to Cart",
+          "ok": false,
+          "tags": [
+            "regresssion"
+          ],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 8398,
+                  "error": {
+                    "message": "Error: Target crashed ",
+                    "stack": "Error: Target crashed "
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: Target crashed "
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-22T15:12:04.683Z",
+                  "attachments": []
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "dcb31983a82c67060828-312c346edf1d9d590caf",
+          "file": "tests/Login.test.ts",
+          "line": 66,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-04-22T15:11:28.949Z",
+    "duration": 44232.729999999996,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

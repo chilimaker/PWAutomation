@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Greg.Woffindin\\source\\repos\\PWAutomation\\playwright.config.ts",
-    "rootDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation",
+    "configFile": "c:\\Users\\Greg.Woffindin\\source\\repos\\PWAutomation\\playwright.config.ts",
+    "rootDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -33,17 +33,17 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation/test-results",
+        "outputDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "C:/Users/Greg.Woffindin/source/repos/PWAutomation",
+        "testDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 30000
       }
     ],
     "shard": null,
@@ -67,7 +67,7 @@
           ],
           "tests": [
             {
-              "timeout": 0,
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -76,7 +76,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 9859,
+                  "duration": 2535,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -84,14 +84,14 @@
                   "steps": [
                     {
                       "title": "Check item Count ",
-                      "duration": 22
+                      "duration": 15
                     },
                     {
                       "title": "Check Cart Subtotal",
-                      "duration": 12
+                      "duration": 7
                     }
                   ],
-                  "startTime": "2024-04-22T15:11:30.197Z",
+                  "startTime": "2024-04-22T19:34:44.199Z",
                   "attachments": []
                 }
               ],
@@ -119,7 +119,7 @@
           ],
           "tests": [
             {
-              "timeout": 0,
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -127,21 +127,24 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 21622,
+                  "status": "timedOut",
+                  "duration": 30012,
                   "error": {
-                    "message": "Error: Target crashed ",
-                    "stack": "Error: Target crashed "
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m"
                   },
                   "errors": [
                     {
-                      "message": "Error: Target crashed "
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-22T15:11:40.576Z",
+                  "startTime": "2024-04-22T19:34:47.270Z",
                   "attachments": []
                 }
               ],
@@ -161,7 +164,7 @@
           ],
           "tests": [
             {
-              "timeout": 0,
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -170,12 +173,12 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 1348,
+                  "duration": 1033,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-22T15:12:03.264Z",
+                  "startTime": "2024-04-22T19:35:18.129Z",
                   "attachments": []
                 }
               ],
@@ -195,7 +198,7 @@
           ],
           "tests": [
             {
-              "timeout": 0,
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -204,20 +207,20 @@
                 {
                   "workerIndex": 1,
                   "status": "failed",
-                  "duration": 8398,
+                  "duration": 5398,
                   "error": {
-                    "message": "Error: Target crashed ",
-                    "stack": "Error: Target crashed "
+                    "message": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n"
                   },
                   "errors": [
                     {
-                      "message": "Error: Target crashed "
+                      "message": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-22T15:12:04.683Z",
+                  "startTime": "2024-04-22T19:35:19.223Z",
                   "attachments": []
                 }
               ],
@@ -234,8 +237,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-22T15:11:28.949Z",
-    "duration": 44232.729999999996,
+    "startTime": "2024-04-22T19:34:43.105Z",
+    "duration": 41686.279,
     "expected": 2,
     "skipped": 0,
     "unexpected": 2,

@@ -6,6 +6,7 @@ export class LoginPage {
   readonly username: Locator;
   readonly password: Locator;
   readonly loginButton: Locator;
+  readonly reloadButton: Locator;
   //readonly validusername: string = 'standard_user';
   //readonly validpassword: string = 'secret_sauce';
    validusername = process.env.VALID_USERNAME as string;
@@ -16,6 +17,7 @@ export class LoginPage {
     this.username = page.getByPlaceholder('Username');
     this.password = page.getByPlaceholder('Password');
     this.loginButton = page.getByRole('button', {name: 'Login'})
+    this.reloadButton = page.getByRole('button', {name: 'Reload'})
   }
 
 

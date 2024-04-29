@@ -11,7 +11,7 @@ test("Login Test",  {
   const context = await browser.newContext();
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
-
+  
   await loginPage.visit();
 
   // Verify URL for page is correct
@@ -20,10 +20,10 @@ test("Login Test",  {
   // Verify page object is visible
   await expect(inventoryPage.productSort).toBeVisible()
 
-  
-  await page.close();
-  await context.close();
-  await browser.close();
+  // Clean up
+  //await page.close();
+  //await context.close();
+  //await browser.close();
   
 })
 
@@ -42,7 +42,6 @@ test("Add Single Item to Cart",  {
   await loginPage.visit();
 
   // select item 
-  //await inventoryPage.add_item_to_cart('sauce-labs-backpack')
   await inventoryPage.add_item_to_cart(itemName)
   
   // check remove button displays
@@ -57,9 +56,9 @@ test("Add Single Item to Cart",  {
   // check remove button displays
   await inventoryPage.check_remove_button('sauce-labs-backpack')
 
-  await page.close();
-  await context.close();
-  await browser.close();
+ //await page.close();
+ // await context.close();
+  //await browser.close();
 })
 
 //for (const record of records) {
@@ -90,9 +89,9 @@ test("Check Price of Item Added to Cart", {
   // check item price exists in cart
   await expect(page.getByText(myPrice)).toBeVisible();
 
-  await page.close();
-  await context.close();
-  await browser.close();
+  //await page.close();
+  //await context.close();
+  //await browser.close();
 })
 
 

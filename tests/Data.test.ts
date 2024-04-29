@@ -64,7 +64,7 @@ test("Check Number of Items Added to Cart", {
     await shoppingCartPage.check_cart_subtotal(cartTotal);
   });
   
-  await page.close();
-  await context.close();
-  await browser.close();
+  //await page.close();
+ // await context.close();
+ // await browser.close();
 });

@@ -54,145 +54,14 @@
   },
   "suites": [
     {
-      "title": "tests\\Data.test.ts",
-      "file": "tests/Data.test.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Check Number of Items Added to Cart",
-          "ok": true,
-          "tags": [
-            "regression"
-          ],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 2535,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Check item Count ",
-                      "duration": 15
-                    },
-                    {
-                      "title": "Check Cart Subtotal",
-                      "duration": 7
-                    }
-                  ],
-                  "startTime": "2024-04-22T19:34:44.199Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "e2991f28cc458fad6a64-9d5a8dd540c688ef4a72",
-          "file": "tests/Data.test.ts",
-          "line": 16,
-          "column": 5
-        }
-      ]
-    },
-    {
       "title": "tests\\Login.test.ts",
       "file": "tests/Login.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Login Test",
-          "ok": false,
-          "tags": [
-            "login"
-          ],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "timedOut",
-                  "duration": 30012,
-                  "error": {
-                    "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m",
-                    "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m"
-                  },
-                  "errors": [
-                    {
-                      "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"context\".\u001b[39m"
-                    },
-                    {
-                      "message": "Error: Target page, context or browser has been closed"
-                    }
-                  ],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-04-22T19:34:47.270Z",
-                  "attachments": []
-                }
-              ],
-              "status": "unexpected"
-            }
-          ],
-          "id": "dcb31983a82c67060828-d50b3d72627a6a35c7e4",
-          "file": "tests/Login.test.ts",
-          "line": 6,
-          "column": 5
-        },
-        {
-          "title": "Add Single Item to Cart",
-          "ok": true,
-          "tags": [
-            "regression"
-          ],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 1033,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-04-22T19:35:18.129Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "dcb31983a82c67060828-0d1db39ddf932d31ea8a",
-          "file": "tests/Login.test.ts",
-          "line": 30,
-          "column": 5
-        },
-        {
           "title": "Check Price of Item Added to Cart",
-          "ok": false,
+          "ok": true,
           "tags": [
             "regresssion"
           ],
@@ -205,31 +74,23 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "status": "failed",
-                  "duration": 5398,
-                  "error": {
-                    "message": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n",
-                    "stack": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n"
-                  },
-                  "errors": [
-                    {
-                      "message": "Error: Frame has been detached.\nCall log:\n  \u001b[2m- navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n\u001b[2m  - navigating to \"about:blank\", waiting until \"load\"\u001b[22m\n"
-                    }
-                  ],
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1323,
+                  "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-22T19:35:19.223Z",
+                  "startTime": "2024-04-29T22:01:01.258Z",
                   "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
           "id": "dcb31983a82c67060828-312c346edf1d9d590caf",
           "file": "tests/Login.test.ts",
-          "line": 66,
+          "line": 65,
           "column": 5
         }
       ]
@@ -237,11 +98,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-22T19:34:43.105Z",
-    "duration": 41686.279,
-    "expected": 2,
+    "startTime": "2024-04-29T22:01:00.307Z",
+    "duration": 2820.916,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 2,
+    "unexpected": 0,
     "flaky": 0
   }
 }

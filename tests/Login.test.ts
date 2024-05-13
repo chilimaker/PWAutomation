@@ -1,4 +1,4 @@
-import { chromium, test, expect} from "@playwright/test";
+import { test, expect} from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
 import { InventoryPage } from "../pages/InventoryPage";
 import { ShoppingCartPage } from "../pages/ShoppingCartPage";
@@ -7,8 +7,7 @@ test("Login Test",  {
   tag: '@login'
  },  async ({ page }) => {
 
-  const browser = await chromium.launch();
-  const context = await browser.newContext();
+  
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   
@@ -19,11 +18,6 @@ test("Login Test",  {
 
   // Verify page object is visible
   await expect(inventoryPage.productSort).toBeVisible()
-
-  // Clean up
-  //await page.close();
-  //await context.close();
-  //await browser.close();
   
 })
 
@@ -31,8 +25,6 @@ test("Add Single Item to Cart",  {
   tag: '@regression'
  }, async ({ page }) => {
 
-  const browser = await chromium.launch();
-  const context = await browser.newContext();
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const shoppingCartPage = new ShoppingCartPage(page);
@@ -55,19 +47,13 @@ test("Add Single Item to Cart",  {
 
   // check remove button displays
   await inventoryPage.check_remove_button('sauce-labs-backpack')
-
- //await page.close();
- // await context.close();
-  //await browser.close();
 })
 
 //for (const record of records) {
-test("Check Price of Item Added to Cart", {
+test("Check error messages for invalid logins", {
   tag: '@regresssion'
 }, async ({ page }) => { //console.log(record.itemName);
   
-  const browser = await chromium.launch();
-  const context = await browser.newContext();
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const shoppingCartPage = new ShoppingCartPage(page);
@@ -88,10 +74,6 @@ test("Check Price of Item Added to Cart", {
 
   // check item price exists in cart
   await expect(page.getByText(myPrice)).toBeVisible();
-
-  //await page.close();
-  //await context.close();
-  //await browser.close();
 })
 
 

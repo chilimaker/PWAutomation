@@ -1,5 +1,5 @@
 
-import { chromium, test, expect} from "@playwright/test";
+import { test, expect} from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
 import { InventoryPage } from "../pages/InventoryPage";
 import { ShoppingCartPage } from "../pages/ShoppingCartPage";
@@ -16,8 +16,7 @@ const records = parse(fs.readFileSync("./data_files/" + process.env.DATA_FILE), 
 test("Check Number of Items Added to Cart", {
   tag: '@regression'
 }, async ({ page }) => {     
-  const browser = await chromium.launch();
-  const context = await browser.newContext();
+
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const shoppingCartPage = new ShoppingCartPage(page);
@@ -62,9 +61,6 @@ test("Check Number of Items Added to Cart", {
   await test.step(`Check Cart Subtotal`, async () => {
   // check total of items before tax
     await shoppingCartPage.check_cart_subtotal(cartTotal);
-  });
-  
-  //await page.close();
- // await context.close();
- // await browser.close();
+  });  
+
 });

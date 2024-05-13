@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "c:\\Users\\Greg.Woffindin\\source\\repos\\PWAutomation\\playwright.config.ts",
-    "rootDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation",
+    "configFile": "c:\\Users\\chili\\source\\repos\\PWAutomation\\playwright.config.ts",
+    "rootDir": "c:/Users/chili/source/repos/PWAutomation",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "reporter": [
@@ -33,12 +33,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation/test-results",
+        "outputDir": "c:/Users/chili/source/repos/PWAutomation/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "c:/Users/Greg.Woffindin/source/repos/PWAutomation",
+        "testDir": "c:/Users/chili/source/repos/PWAutomation",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -49,10 +49,109 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.43.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
+    {
+      "title": "tests\\Data.test.ts",
+      "file": "tests/Data.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Check Number of Items Added to Cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 4608,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Check item Count ",
+                      "duration": 10
+                    },
+                    {
+                      "title": "Check Cart Subtotal",
+                      "duration": 8
+                    }
+                  ],
+                  "startTime": "2024-05-13T16:22:20.481Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e2991f28cc458fad6a64-9d5a8dd540c688ef4a72",
+          "file": "tests/Data.test.ts",
+          "line": 16,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "tests\\InvalidLogin.test.ts",
+      "file": "tests/InvalidLogin.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Invalid Login Test",
+          "ok": true,
+          "tags": [
+            "login"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "Login",
+                  "description": "Check error messaging for invalid logins"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 3931,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-05-13T16:22:20.467Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ba053770704c8ee6ac1-927ecd0ff9403701c317",
+          "file": "tests/InvalidLogin.test.ts",
+          "line": 14,
+          "column": 5
+        }
+      ]
+    },
     {
       "title": "tests\\Login.test.ts",
       "file": "tests/Login.test.ts",
@@ -60,7 +159,75 @@
       "line": 0,
       "specs": [
         {
-          "title": "Check Price of Item Added to Cart",
+          "title": "Login Test",
+          "ok": true,
+          "tags": [
+            "login"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 3729,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-05-13T16:22:20.463Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcb31983a82c67060828-d50b3d72627a6a35c7e4",
+          "file": "tests/Login.test.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "Add Single Item to Cart",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 896,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-05-13T16:22:24.823Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcb31983a82c67060828-0d1db39ddf932d31ea8a",
+          "file": "tests/Login.test.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "Check error messages for invalid logins",
           "ok": true,
           "tags": [
             "regresssion"
@@ -74,23 +241,23 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 2,
                   "status": "passed",
-                  "duration": 1323,
+                  "duration": 788,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-29T22:01:01.258Z",
+                  "startTime": "2024-05-13T16:22:25.730Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "dcb31983a82c67060828-312c346edf1d9d590caf",
+          "id": "dcb31983a82c67060828-95d1cbd2f6f8ee768129",
           "file": "tests/Login.test.ts",
-          "line": 65,
+          "line": 53,
           "column": 5
         }
       ]
@@ -98,9 +265,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-29T22:01:00.307Z",
-    "duration": 2820.916,
-    "expected": 1,
+    "startTime": "2024-05-13T16:22:19.679Z",
+    "duration": 6912.6759999999995,
+    "expected": 5,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

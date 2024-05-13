@@ -1,5 +1,5 @@
-#simple example of automation
+##simple example of automation
 
-## Page Object Model design
-## data driven
-## github action triggers
+# Page Object Model design
+# data driven
+# github action triggers
